@@ -9,7 +9,8 @@
   },
   "repository": "umijs/umi-blocks/search-table",
   "scripts": {
-    "dev": "umi dev"
+    "dev": "umi dev",
+    "commitmsg": "commitlint -E GIT_PARAMS"
   },
   "dependencies": {
     "conventional-changelog-cli": "^2.0.21",
@@ -17,6 +18,7 @@
     "react": ">=16.0.0"
   },
   "devDependencies": {
+    "commitlint": "^8.1.0",
     "ts-jest-babel-7": "^22.0.7",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
