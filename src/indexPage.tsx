@@ -1,40 +1,25 @@
-import { SearchTableState } from 'components/search-table/reducer';
-import useSearchTableState from 'components/search-table/useSearchTableFilter';
-import PageLayout from 'components/page-layout';
-import React from 'react';
-import PageExtra from './components/pageExtra';
-import SearchTable from 'components/search-table';
-import getColumns from './components/Columns';
-import TableAction from './components/TableAction';
-import SearchAction from './components/SearchAction';
-
+/**
+ * @name
+ * @author MingShined
+ */
+import React, { Fragment } from 'react';
+import SearchTable from 'src/components/search-table';
+import getFormData from './components/SearchNode';
+import getColumns from './components/TableNode';
+import PromotionTableActions from './components/TableActions';
 interface Props {}
-
-const getInitState = () => ({
-  checkedKeys: [],
-});
-type InitState = ReturnType<typeof getInitState> & SearchTableState;
-
-const ToBeAcceptRecruit: React.FC<Props> = props => {
-  const [state, setState] = useSearchTableState<InitState>(getInitState());
+const PromotionManage: React.FC<Props> = props => {
   return (
-    <PageLayout title="页面标题" extra={<PageExtra />}>
-      <SearchTable
-        setFilterParams={filterParams => setState({ filterParams })}
-        filterParams={state.filterParams}
-        ajxaProps={{ url: '', method: 'GET' }}
-        placeholder="请输入"
-        title="模块标题"
-        description="i am description......."
-        tableProps={{
-          columns: getColumns(state, setState),
-          dataSource: [{ date1: '1' }],
-        }}
-        checkable={true}
-        tableAciton={<TableAction />}
-        searchAction={<SearchAction />}
-      />
-    </PageLayout>
+    <SearchTable
+      commonFormProps={{ formData: getFormData() }}
+      commonTableProps={{ columns: getColumns() }}
+      tabsData={[{ label: 1, value: 1 }]}
+      tableAction={<PromotionTableActions />}
+      tabKey="xx"
+      ajaxProps={{ url: '/', method: 'GET' }}
+    >
+      1
+    </SearchTable>
   );
 };
-export default ToBeAcceptRecruit;
+export default PromotionManage;
