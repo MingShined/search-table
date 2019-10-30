@@ -5,7 +5,7 @@
 import React, { Fragment } from 'react';
 import { Button } from 'antd';
 interface Props {}
-const PromotionTableActions: React.FC<Props> = props => {
+const TableActions: React.FC<Props> = props => {
   return (
     <Fragment>
       <Button className="mg-r2x">1</Button>
@@ -13,4 +13,4 @@ const PromotionTableActions: React.FC<Props> = props => {
     </Fragment>
   );
 };
-export default PromotionTableActions;
+export default TableActions;

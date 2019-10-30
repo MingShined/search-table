@@ -8,7 +8,7 @@ import getFormData from './components/SearchNode';
 import getColumns from './components/TableNode';
 import PromotionTableActions from './components/TableActions';
 interface Props {}
-const PromotionManage: React.FC<Props> = props => {
+const DemoManage: React.FC<Props> = props => {
   return (
     <SearchTable
       commonFormProps={{ formData: getFormData() }}
@@ -22,4 +22,4 @@ const PromotionManage: React.FC<Props> = props => {
     </SearchTable>
   );
 };
-export default PromotionManage;
+export default DemoManage;
